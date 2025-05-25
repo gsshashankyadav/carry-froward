@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pause Movement | Carry Forward</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        accent: '#8B5CF6',
+                        dark: '#1F2937',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+        }
+        
+        .section-divider {
+            position: relative;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .section-divider::before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: #E5E7EB;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm py-4" style="position: sticky;top: 0;z-index: 100;">
+        <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
+            <div class="font-bold text-xl text-primary">MMGlobus</div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="hover:text-primary transition-colors">About</a>
+                <a href="#how-it-works" class="hover:text-primary transition-colors">How It Works</a>
+                <a href="#features" class="hover:text-primary transition-colors">Features</a>
+                <a href="#vision" class="hover:text-primary transition-colors">Vision</a>
+                <a href="#join" class="hover:text-primary transition-colors">Join</a>
+            </div>
+            <button class="bg-primary text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors">Sign Up</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20 md:py-28">
+        <div class="container mx-auto px-4 md:px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Pause Movement</h1>
+            <p class="text-xl md:text-2xl font-medium mb-8">One Student. One Gift. One Global Movement.</p>
+            <div class="max-w-3xl mx-auto">
+                <p class="text-lg mb-8">MMGlobus presents: <span class="font-bold">Carry Forward</span> — a peer-to-peer platform where students donate books, equipment, and essentials to one another. No red tape. No waste. Just generosity, growth, and change.</p>
+                <button class="bg-white text-primary px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors">Join The Movement</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="section-divider mb-12">
+                <span class="bg-white px-4 text-xl font-semibold text-primary">What Is Carry Forward?</span>
+            </div>
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="text-lg mb-6">Carry Forward is a student-driven initiative designed to build a sustainable ecosystem of learning. It's a web-based platform that allows students to donate, exchange, and request books, lab gear, tech devices, and more — directly from fellow students.</p>
+                <p class="text-lg font-medium">Together, we create an open loop of learning where resources are never lost, only passed forward.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="section-divider mb-12">
+                <span class="bg-gray-50 px-4 text-xl font-semibold text-primary">How It Works</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-book text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Donate Items</h3>
+                    <p class="text-gray-600">List any books, equipment, or supplies you're no longer using.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-list text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Wishlist What You Need</h3>
+                    <p class="text-gray-600">Search or request what you're missing this semester.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-comments text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Connect & Chat</h3>
+                    <p class="text-gray-600">Message directly with fellow students to coordinate handovers.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center hover:shadow-md transition-shadow">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-sync-alt text-yellow-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Repeat & Reinforce</h3>
+                    <p class="text-gray-600">Keep the circle going. Your one donation may spark someone's future.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="section-divider mb-12">
+                <span class="bg-white px-4 text-xl font-semibold text-primary">Key Features</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 mr-4">
+                        <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-comments text-primary"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2">Real-Time Chat</h3>
+                        <p class="text-gray-600">Coordinate pickups or simply connect with fellow students.</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 mr-4">
+                        <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-magic text-accent"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2">Smart Wishlist</h3>
+                        <p class="text-gray-600">Automatically match you with items you're looking for.</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 mr-4">
+                        <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user-circle text-secondary"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2">Profile & History</h3>
+                        <p class="text-gray-600">Build your giving legacy and track contributions.</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 mr-4">
+                        <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-shield-alt text-yellow-500"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2">Community Trust</h3>
+                        <p class="text-gray-600">Report/block options, verified campus logins, and positive feedback scores.</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 mr-4">
+                        <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-bell text-red-500"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2">Notifications & Alerts</h3>
+                        <p class="text-gray-600">Get real-time updates when an item you need becomes available.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why It Matters Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="section-divider mb-12">
+                <span class="bg-gray-50 px-4 text-xl font-semibold text-primary">Why It Matters</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-recycle text-secondary text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Reduce Educational Waste</h3>
+                    <p class="text-gray-600">Over 5 million textbooks end up in landfills every year. Let's change that.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-hand-holding-usd text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Empower Financial Equity</h3>
+                    <p class="text-gray-600">Bridge the resource gap for underfunded students through shared access.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-users text-accent text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Build Student Community</h3>
+                    <p class="text-gray-600">Promote empathy, trust, and meaningful connections across campuses.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision" class="py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="section-divider mb-12">
+                <span class="bg-white px-4 text-xl font-semibold text-primary">Our Vision</span>
+            </div>
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-2xl font-bold mb-6">Changing the World, One Student at a Time.</h2>
+                <p class="text-lg mb-6">At MMGlobus, we believe that education is a shared journey — and that journey should never be limited by access to materials. With Carry Forward, we're planting the seeds of a new educational culture: one rooted in sharing, sustainability, and support.</p>
+                <p class="text-lg font-medium italic">This isn't charity. It's a movement.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Movement Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="section-divider mb-12">
+                <span class="bg-gray-50 px-4 text-xl font-semibold text-primary">A Movement That Moves</span>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <p class="text-lg mb-6">MMGlobus envisions a global network of students uplifting each other. As the Carry Forward platform expands, campuses become collaborative ecosystems — where students empower students, and knowledge flows freely.</p>
+                <div class="bg-white p-6 rounded-lg shadow-sm mb-8">
+                    <h3 class="text-lg font-semibold mb-4">Imagine:</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <span class="text-primary mr-2">•</span>
+                            <span>A future where no student drops a course because they can't afford a textbook.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary mr-2">•</span>
+                            <span>Where lab kits don't collect dust in closets, but pass from learner to learner.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-primary mr-2">•</span>
+                            <span>Where community isn't a buzzword — it's a behavior.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Section -->
+    <section id="join" class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-4 md:px-6 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-2xl font-bold mb-6">Join the Movement</h2>
+                <p class="text-lg mb-8">Ready to Carry Forward?</p>
+                <button class="bg-white text-primary px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors mb-8">Sign up today</button>
+                <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
+                    <a href="https://mmglobus.com/carryforward" class="flex items-center hover:underline">
+                        <i class="fas fa-globe mr-2"></i>
+                        <span>mmglobus.com/carryforward</span>
+                    </a>
+                    <a href="mailto:contact@mmglobus.in" class="flex items-center hover:underline">
+                        <i class="fas fa-envelope mr-2"></i>
+                        <span>contact@mmglobus.in</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-10">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-8">
+                <p class="text-lg font-medium italic">"Because every student deserves a little help. And every resource deserves a second life."</p>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-sm text-gray-400">© 2023 MMGlobus. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
